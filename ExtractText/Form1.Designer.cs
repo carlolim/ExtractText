@@ -30,6 +30,7 @@
         {
             this.btnCapture = new System.Windows.Forms.Button();
             this.txtResult = new System.Windows.Forms.TextBox();
+            this.btnOpen = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // btnCapture
@@ -54,11 +55,22 @@
             this.txtResult.Size = new System.Drawing.Size(848, 265);
             this.txtResult.TabIndex = 1;
             // 
+            // btnOpen
+            // 
+            this.btnOpen.Location = new System.Drawing.Point(93, 12);
+            this.btnOpen.Name = "btnOpen";
+            this.btnOpen.Size = new System.Drawing.Size(75, 23);
+            this.btnOpen.TabIndex = 2;
+            this.btnOpen.Text = "Open file";
+            this.btnOpen.UseVisualStyleBackColor = true;
+            this.btnOpen.Click += new System.EventHandler(this.btnOpen_Click);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(872, 315);
+            this.Controls.Add(this.btnOpen);
             this.Controls.Add(this.txtResult);
             this.Controls.Add(this.btnCapture);
             this.Name = "Form1";
@@ -73,6 +85,7 @@
 
         private System.Windows.Forms.Button btnCapture;
         private System.Windows.Forms.TextBox txtResult;
+        private System.Windows.Forms.Button btnOpen;
     }
 }
 

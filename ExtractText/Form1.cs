@@ -31,12 +31,11 @@ namespace ExtractText
             Hide();
             frm.ShowDialog();
             Show();
-            ExtractText();
+            ExtractText($@"{Application.StartupPath}\capture.jpg");
         }
 
-        private void ExtractText()
+        private void ExtractText(string path)
         {
-            string path = $@"{Application.StartupPath}\capture.jpg";
             if (File.Exists(path))
             {
                 Task.Run(() =>
@@ -49,7 +48,6 @@ namespace ExtractText
                             ocrProvider.SetImage(img);
                             ocrProvider.Recognize();
                             string text = ocrProvider.GetUTF8Text().TrimEnd();
-                            File.Delete(path);
                             SetTextResult(text);
                         }
                     }
@@ -68,6 +66,19 @@ namespace ExtractText
             else
             {
                 txtResult.Text = result;
+            }
+        }
+
+        private void btnOpen_Click(object sender, EventArgs e)
+        {
+            OpenFileDialog theDialog = new OpenFileDialog();
+            theDialog.Title = "Open Text File";
+            theDialog.Filter = "Files|*.jpg;*.jpeg;*.png;*.bmp;";
+            theDialog.Multiselect = false;
+            theDialog.InitialDirectory = @"C:\";
+            if (theDialog.ShowDialog() == DialogResult.OK)
+            {
+                ExtractText(theDialog.FileName);
             }
         }
     }
