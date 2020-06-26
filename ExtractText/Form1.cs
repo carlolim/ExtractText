@@ -65,7 +65,8 @@ namespace ExtractText
             }
             else
             {
-                txtResult.Text = result;
+                if (chkAppend.Checked) txtResult.AppendText(result);
+                else txtResult.Text = result;
             }
         }
 

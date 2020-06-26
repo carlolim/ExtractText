@@ -31,6 +31,7 @@
             this.btnCapture = new System.Windows.Forms.Button();
             this.txtResult = new System.Windows.Forms.TextBox();
             this.btnOpen = new System.Windows.Forms.Button();
+            this.chkAppend = new System.Windows.Forms.CheckBox();
             this.SuspendLayout();
             // 
             // btnCapture
@@ -51,7 +52,7 @@
             this.txtResult.Location = new System.Drawing.Point(12, 41);
             this.txtResult.Multiline = true;
             this.txtResult.Name = "txtResult";
-            this.txtResult.ScrollBars = System.Windows.Forms.ScrollBars.Horizontal;
+            this.txtResult.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
             this.txtResult.Size = new System.Drawing.Size(848, 265);
             this.txtResult.TabIndex = 1;
             // 
@@ -65,11 +66,22 @@
             this.btnOpen.UseVisualStyleBackColor = true;
             this.btnOpen.Click += new System.EventHandler(this.btnOpen_Click);
             // 
+            // chkAppend
+            // 
+            this.chkAppend.AutoSize = true;
+            this.chkAppend.Location = new System.Drawing.Point(769, 18);
+            this.chkAppend.Name = "chkAppend";
+            this.chkAppend.Size = new System.Drawing.Size(91, 17);
+            this.chkAppend.TabIndex = 3;
+            this.chkAppend.Text = "Append result";
+            this.chkAppend.UseVisualStyleBackColor = true;
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(872, 315);
+            this.Controls.Add(this.chkAppend);
             this.Controls.Add(this.btnOpen);
             this.Controls.Add(this.txtResult);
             this.Controls.Add(this.btnCapture);
@@ -86,6 +98,7 @@
         private System.Windows.Forms.Button btnCapture;
         private System.Windows.Forms.TextBox txtResult;
         private System.Windows.Forms.Button btnOpen;
+        private System.Windows.Forms.CheckBox chkAppend;
     }
 }
 
